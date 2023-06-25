@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --violet:hsl(263, 55%, 52%);
+    --graysh-blue:hsl(217, 19%, 35%);
+    --blackish-blue:hsl(219, 29%, 14%);
+    --white:hsl(0, 0%, 100%);
+    --ligth-gray:hsl(0, 0%, 81%);
+    --ligth-graysh-blue:hsl(210, 46%, 95%);
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+@media screen and (min-width: 1024px){
+    .container {
+ grid-template-columns: repeat(4, minmax(0,1fr));
+    }
+    }
+.container {
+    display: grid;
+    grid-gap:1rem;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.card {
+    background-color: var(--white);
+    border-radius: 1rem;
+    color: var(--graysh-blue);
+    padding:1rem;
+}
+.card.card__primery {
+    background-color: var(--violet);
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 88% 0%;
+    color: var(--white);
+}
+@media screen and (min-width: 1024px){
+.card__primery {
+grid-column-start: 1;
+grid-column-end: 3;
+}
+}
+.card__header {
+    display: flex;
+    row-gap: 0.5rem;
+}
+.card.card__primery.card__header__image > img {
+    border: 2px solid var(--ligth-gray);
+}
+.card__header__image > img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 2px solid var(--ligth-gray);
+    border-radius: 50%;
+}
+.card__header_info {
+    margin-left: 1rem;
+}
+.card__header_info > p {
+    opacity: 0.5;
+}
+.card__body h4 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+.card__body p {
+    font-size: 0.85rem;
+    opacity: 0.75;
+    padding-top: 1rem;
+}
+.card.card__gray {
+    background-color: var(--graysh-blue);
+    color: var(--ligth-gray);
+}
+@media screen and (min-width: 1024px){
+    .card__long {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    }
+    }
+.card.card__dark {
+    background-color: var(--blackish-blue);
+    color: var(--ligth-gray);
+}
+@media screen and (min-width: 1024px){
+    .card__dark {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    }
+    }
